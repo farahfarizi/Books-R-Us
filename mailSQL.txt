@@ -1,0 +1,13 @@
+DROP TABLE Mail;
+
+CREATE TABLE Mail
+(
+ID NUMBER(4) NOT NULL,
+Sender_Mail VARCHAR2(20),
+Sender_Name VARCHAR2 (20),
+Subject VARCHAR2(20),
+Message VARCHAR2(500),
+Primary key (ID)
+);
+
+commit;

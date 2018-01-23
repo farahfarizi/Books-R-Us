@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link href="sit104.css" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width= device-width,initial-scale =1">
+
+	<style>
+	.myslides{
+		display: none;} 
+	</style>
+</head>
+<body background="background.png" id="bg" alt"">
+
+
+
+<!--THIS IS NAVIGATION BAR Made in reference of https://www.w3schools.com/css/css_navbar.asp -->
+<div>
+	<picture>
+	<img src="logo.png" alt="logo" style="width:40%">
+</picture>
+<ul>
+		<li><a href="home.html">Home</a></li>
+	<li><a href="product.html">Product</a></li>
+	<li><a href="faq.html">FAQ</a></li>
+	<li><a href="contact.html">Contact</a></li>
+	<li><a href="search.html">Search</a></li>
+</ul>
+</div>
+
+<div>
+
+<div class="welcomeSection" id="firstsection" style="margin-top: 50px;" >
+	<h1 class="firstline" id="line1" id="text1"><b>Hello! Welcome to our website</b></h1><p class="secondline" id="textbox">If you're local, we hope to see you in real time and space on your next visit ... <br><br>If you're from somewhere else, don't hesitate to contact us via this website... <br><br>and if you're visiting Geelong, we hope you'll come by.
+	</p>
+	<h1 class="firstline" id="line1" id="text1"><b>History</b></h1>
+	<p class="secondline" id="textbox">In August 2001 Lauren and Shaun opened this used book shop in 123 moorabool street in Geelong. <br><br>Since 
+2015 we started opening at 9 a.m.! <br><br> We must be the only book shop open at this hour!.</p>
+	
+</div>
+
+<div class = "slider" id="wholeslide">
+
+	<div class="myslides" id="slide">
+	
+	<div class = "sliderText" id="stext">
+	<h1 id="ttitle"><b>Important Notice!!</b></h1>
+	<h1>From Monday October 9 to Friday October 13, we will be closing early, for stocktake. The shop will be open until 1pm. Saturday 14th we return to normal trading hours. Apologies for any inconvenience.</h1></div>	
+	</div>
+
+
+	<div class="myslides" id="slide">
+	
+	<div class = "sliderText" id="stext">
+	<h1 id="ttitle"><b>GOOD NEWS!!!</b></h1>
+	<h1>All books are 5% off in July and December, 2017!</h1> </div>	
+	</div>
+
+	<div class="myslides" id="slide">
+	<div class = "sliderText" id="stext">
+	<h1 id="ttitle"><b>GET READY!</b></h1>
+	<h1>We have a range of secondhand books, and selected new ones.  
+	</h1> </div>
+	</div>
+
+	<div class="myslides" id="slide">
+	<div class = "sliderText" id="stext">
+	<h1 id="ttitle"><b>Do you have books to sell?</b></h1>
+	<h1>	
+		We are always on the look out for secondhand books. Do try us if you have any that you no longer require, we may well be interested, for cash or exchange.
+		<br><br>
+		Please give us a call first to arrange a convenient time.
+ 
+	</h1> </div>
+	</div>
+
+	</div>
+	
+</div>
+
+
+<div class="atthebottom" id="footer">
+	<p>©Deakin University, School of Information Technology. This web page has been developed as a student assignment for the unit SIT104: Introduction to Web Development. Therefore it is not part of the University's authorised web site. DO NOT USE THE INFORMATION CONTAINED ON THIS WEB PAGE IN ANY WAY.</p>
+</div>
+
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("myslides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(carousel, 2000); 
+}
+</script>
+
+
+</body>
+</html>

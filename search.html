@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>search</title>
+<link href="sit104.css" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width= device-width,initial-scale =1">
+<script>
+	function validate(){
+
+		var category = document.getElementsByName("category");
+		
+		var pub_date=document.forms["searchform"]["info_need1"].checked;
+		var isbn=document.forms["searchform"]["info_need2"].checked;
+		var format=document.forms["searchform"]["info_need3"].checked;
+		var language=document.forms["searchform"]["info_need4"].checked;
+		var page_num=document.forms["searchform"]["info_need5"].checked;
+		var country=document.forms["searchform"]["info_need6"].checked;
+		var audience=document.forms["searchform"]["info_need7"].checked;
+
+		var child_teen=document.forms["searchform"]["ficbooks_classification1"].checked;
+		var child_fic=document.forms["searchform"]["ficbooks_classification2"].checked;
+		var fantasy_fic=document.forms["searchform"]["ficbooks_classification3"].checked;
+		var general=document.forms["searchform"]["ficbooks_classification4"].checked;
+
+		var classification1=document.forms["searchform"]["classification1"].checked;
+		var classification2=document.forms["searchform"]["classification2"].checked;
+		var classification3=document.forms["searchform"]["classification3"].checked;
+		var classification4=document.forms["searchform"]["classification4"].checked;
+		var classification5=document.forms["searchform"]["classification5"].checked;
+		var classification6=document.forms["searchform"]["classification6"].checked;
+		var classification7=document.forms["searchform"]["classification7"].checked;
+		var classification8=document.forms["searchform"]["classification8"].checked;
+		var classification9=document.forms["searchform"]["classification9"].checked;
+		var classification10=document.forms["searchform"]["classification10"].checked;
+		var classification11=document.forms["searchform"]["classification11"].checked;
+		var classification12=document.forms["searchform"]["classification12"].checked;
+		var classification13=document.forms["searchform"]["classification13"].checked;
+		var classification14=document.forms["searchform"]["classification14"].checked;
+		var classification15=document.forms["searchform"]["classification15"].checked;
+		var classification16=document.forms["searchform"]["classification16"].checked;
+		var classification17=document.forms["searchform"]["classification17"].checked;
+		var classification18=document.forms["searchform"]["classification18"].checked;
+		var classification19=document.forms["searchform"]["classification19"].checked;
+		var classification20=document.forms["searchform"]["classification20"].checked;
+		var classification21=document.forms["searchform"]["classification21"].checked;
+		var classification22=document.forms["searchform"]["classification22"].checked;
+		var classification23=document.forms["searchform"]["classification23"].checked;
+		var classification24=document.forms["searchform"]["classification24"].checked;
+		var classification25=document.forms["searchform"]["classification25"].checked;
+		var classification26=document.forms["searchform"]["classification26"].checked;
+		var classification27=document.forms["searchform"]["classification27"].checked;
+
+
+
+		/*INFORMATION TO BE SHOWN VALIDATION*/
+
+			if(pub_date==false&&isbn==false&&format==false&&language==false
+			&&page_num==false&&country==false&&audience==false){
+	alert("You need to choose at least one information to be shown!");
+			return false;
+			}
+		/*CATEGORY VALIDATION*/
+		 else if(category[0].checked == false && category[1].checked==false){
+			alert("You much choose a book category!");
+			return false;
+		}
+		/*FICTION SUBCLASS */
+		else if((category[1].checked==true && (child_fic==true||child_teen==true||fantasy_fic==true||general==true))||
+			(category[0].checked==true &&(classification1==true||classification2==true||classification3==true||classification4==true||
+				classification5==true||classification6==true||classification7==true||classification8==true||classification9==true||classification10==true||classification11==true||classification12==true||classification13==true||classification14==true||
+				classification15==true||classification16==true||classification17==true||classification18==true||classification19==true||classification20==true)||classification21==true||classification22==true||classification23==true||classification24==true||
+				classification25==true||classification26==true||classification27==true))
+
+		{
+			alert("Your category selection and subcategory doesn't match!");
+			return false;
+		}
+
+		
+
+		
+		else{
+			alert("Searching in progress!")
+		}
+	}
+
+</script>
+</head>
+<body background="background.png" id="bg" alt"">
+<!--PUT YOUR HEADER HERE -->
+<div>
+	<picture>
+	<img src="logo.png" alt="logo" style="width:40%">
+</picture>
+<ul>
+	<li><a href="home.html">Home</a></li>
+	<li><a href="product.html">Product</a></li>
+	<li><a href="faq.html">FAQ</a></li>
+	<li><a href="contact.html">Contact</a></li>
+	<li><a href="search.html">Search</a></li>
+
+</ul>
+</div>
+<!-- HEADER END-->
+
+<form name="searchform" onsubmit="return validate()" method = "post">
+	<div class="forms">
+	<div id= "formtopper">
+	<h1 style="text-align: center;">Search for books</h1>
+	</div>
+
+	<div id ="forminside" style="overflow: scroll; overflow-x: hidden; height: 70%;">
+		
+<div>
+		<h1>
+			Information needed: [can choose more than one]
+			<div style="font-size: 14px; margin-left: 25px;">
+				<div style="margin-top: 15px"><input type="checkbox" name="info_need1" id="class" value="pub_date"> Published date <br>
+				<input type="checkbox" name="info_need2" id="class" value="isbn"> ISBN <br>
+				<input type="checkbox" name="info_need3" id="class" value="format"> Format <br>
+				<input type="checkbox" name="info_need4" id="class" value="language"> Language <br>
+				<input type="checkbox" name="info_need5" id="class" value="page_num"> Number Of Pages <br>
+				<input type="checkbox" name="info_need6" id="class" value="country"> Country of publication <br>
+				<input type="checkbox" name="info_need7" id="class" value="audience"> 	Audience <br>		
+				</div>
+				</div>
+		</h1>
+			
+		</div>
+
+		<div>
+			<h1 >
+			Books category:<br>
+			<div style="margin-top: 15px; font-size: 14px; margin-left: 25px;">
+				<input type="radio" name="category" id="category_fiction" value="fiction"> Fiction
+<input type="radio" name="category" id="category_nonfiction" value="nonfiction"> Non Fiction
+			</div>
+			
+			</h1>
+			
+		</div>
+
+<div>
+		<h1>
+			Fiction books classification: [can choose more than one]
+			<div style="font-size: 14px; margin-left: 25px;">
+				<div style="margin-top: 15px"><input type="checkbox" name="ficbooks_classification1" id="class" value="child_teen"> Children & Teenagers / Young Adults <br>
+				<input type="checkbox" name="ficbooks_classification2" id="class" value="child_fic"> Children's Fiction
+					<br>
+
+					<input type="checkbox" name="ficbooks_classification3" id="class" value="fantasy_fic"> Fantasy Fiction
+					<br>
+
+					<input type="checkbox" name="ficbooks_classification4" id="class" value="fantasy_fic"> General Fiction
+					<br>
+
+				
+
+				</div>
+				</div>
+		</h1>
+			
+		</div>
+		<div>
+			<h1>Non-fiction books classification: [can choose more than one]
+			<br>
+			<div style="font-size: 14px; margin-left: 25px;">
+				<div style="margin-top: 15px"><input type="checkbox" name="classification1" id="class" value="fam_and_health"> Family and Health <br>
+			<input type="checkbox" name="classification2" id="class" value="health_cookery">  Health & Wholefood Cookery <br>
+			<input type="checkbox" name="classification3" id="class" value="cook_food_drink">  Cooking, Food & Drink <br>
+			<input type="checkbox" name="classification4" id="class" value="fitness">  Fitness & Diet <br>
+			<input type="checkbox" name="classification5" id="class" value="arts_entertain">  Arts & Entertainment <br> 
+			<input type="checkbox" name="classification6" id="class" value="bio_stories">  Biographies & True Stories <br> 
+			<input type="checkbox" name="classification7" id="class" value="autobiographies"> Autobiographies  <br>
+			<input type="checkbox" name="classification8" id="class" value="music">  Music <br> 	 			 
+			<input type="checkbox" name="classification9" id="class" value="lit_poetry_play">  Literature, Poetry & Plays <br> 	  
+			<input type="checkbox" name="classification10" id="class" value="nonfiction_prose"> Non-Fiction Prose <br>
+			<input type="checkbox" name="classification11" id="class" value="comp_IT"> Computing & I.T <br>
+			<input type="checkbox" name="classification12" id="class" value="comp_architect_logic"> Computer Architecture & Logic Design <br>
+			<input type="checkbox" name="classification13" id="class" value="sys_analys_design"> 
+			 Systems Analysis & Design  <br>
+			 <input type="checkbox" name="classification14" id="class" value="engineering_tech"> 
+			Engineering & Technology <br>  	 	 	 	  
+			  <input type="checkbox" name="classification15" id="class" value="electronic_engineering"> 
+			 Electronics Engineering <br>
+			  <input type="checkbox" name="classification16" id="class" value="mech_engineer_mats"> 
+			 Mechanical Engineering & Materials <br>
+			  <input type="checkbox" name="classification17" id="class" value="circ_comp"> Circuits & Components <br>
+			  <input type="checkbox" name="classification18" id="class" value="engineering_skill"> Engineering Skills & Trades <br>
+			  <input type="checkbox" name="classification19" id="class" value="text_books "> Text Books <br>
+			  <input type="checkbox" name="classification20" id="class" value="highEd_textbook"> Higher Education & Vocational Textbooks <br>
+			  <input type="checkbox" name="classification21" id="class" value="comp_programming">
+			 Computing & Programming<br>
+			 <input type="checkbox" name="classification22" id="class" value="comp_networking_com">
+			 Computer Networking & Communications<br>
+			 <input type="checkbox" name="classification23" id="class" value="dist_sys">
+			 Distributed Systems<br>
+			 <input type="checkbox" name="classification24" id="class" value="parallel_processing">
+			 Parallel Processing<br>
+			  <input type="checkbox" name="classification25" id="class" value="op_sys_textBook"> 
+			 Operating Systems Text Books<br>
+			  <input type="checkbox" name="classification26" id="class" value="math"> 
+			 Mathematics<br>
+			  <input type="checkbox" name="classification27" id="class" value="science"> 
+			 Science<br>
+			</div>
+			    
+  </div>
+  	</h1>
+		</div>
+              <div>
+<h1 style="margin-right: 5px; margin-left: 550px; margin-top:3%;" >
+<input type="submit" value ="Search" style="background-color: #40352B"; id="submitenquiries" >
+</h1>	
+</div>    
+	</div>
+	</div>
+</form>
+
+
+
+</div>
+
+<!-- PUT YOUR FOOTER HERE -->
+<div class="atthebottom" id="footer">
+	<p>©Deakin University, School of Information Technology. This web page has been developed as a student assignment for the unit SIT104: Introduction to Web Development. Therefore it is not part of the University's authorised web site. DO NOT USE THE INFORMATION CONTAINED ON THIS WEB PAGE IN ANY WAY.</p>
+</div>
+</body>
+</html>
